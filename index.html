@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валентинка</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        .card h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .buttons .yes {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .buttons .no {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .gif {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Ты будешь моей пикми?</h1>
+        <div class="buttons">
+            <button class="yes">Да</button>
+            <button class="no">Нет</button>
+        </div>
+        <img src="https://media.giphy.com/media/l2QDM9Jnim1YVILXa/giphy.gif" alt="Cat Hug" class="gif">
+    </div>
+
+    <script>
+        const yesButton = document.querySelector('.yes');
+        const noButton = document.querySelector('.no');
+        const gif = document.querySelector('.gif');
+
+        noButton.addEventListener('click', () => {
+            let currentFontSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
+            yesButton.style.fontSize = (currentFontSize + 2) + 'px';
+        });
+
+        yesButton.addEventListener('click', () => {
+            gif.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
